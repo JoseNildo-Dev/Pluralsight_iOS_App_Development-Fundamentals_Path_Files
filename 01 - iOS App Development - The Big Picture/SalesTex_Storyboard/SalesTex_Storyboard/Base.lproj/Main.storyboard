@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SalesTex_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales Tax Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-i9-Mej">
+                                <rect key="frame" x="12" y="56" width="390" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before Tax Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSk-9y-JRs">
+                                <rect key="frame" x="12" y="137" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLX-UM-Rk0">
+                                <rect key="frame" x="144" y="126.5" width="258" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="befoteTaxPriceChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="qd3-zN-ow0"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales Tax Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DK-3R-hFy">
+                                <rect key="frame" x="12" y="178" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4.7%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPL-qA-KlP">
+                                <rect key="frame" x="131" y="171.5" width="271" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="salesTaxRateChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="c4S-SF-VAN"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After Tax Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyV-9U-6rj">
+                                <rect key="frame" x="12" y="219" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owd-1h-m0C">
+                                <rect key="frame" x="131" y="212.5" width="271" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9El-JC-sh2">
+                                <rect key="frame" x="175" y="286.5" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cK-s5-xZx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g9Y-i9-Mej" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="3L7-Sp-LZS"/>
+                            <constraint firstItem="lSk-9y-JRs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="4p4-Qr-IOj"/>
+                            <constraint firstItem="9El-JC-sh2" firstAttribute="top" secondItem="owd-1h-m0C" secondAttribute="bottom" constant="40" id="B08-3s-wO3"/>
+                            <constraint firstItem="4DK-3R-hFy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="EOc-BU-hAM"/>
+                            <constraint firstItem="g9Y-i9-Mej" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PN3-gJ-WKJ"/>
+                            <constraint firstItem="lyV-9U-6rj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="QKO-Yo-u87"/>
+                            <constraint firstItem="tPL-qA-KlP" firstAttribute="leading" secondItem="4DK-3R-hFy" secondAttribute="trailing" constant="8" id="Qyp-Gk-SwW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g9Y-i9-Mej" secondAttribute="trailing" constant="12" id="T8i-Yf-Nn8"/>
+                            <constraint firstItem="tPL-qA-KlP" firstAttribute="centerY" secondItem="4DK-3R-hFy" secondAttribute="centerY" id="UqW-iP-0Am"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="owd-1h-m0C" secondAttribute="trailing" constant="12" id="V4t-Cz-gSv"/>
+                            <constraint firstItem="g9Y-i9-Mej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="VxW-0f-Y7g"/>
+                            <constraint firstItem="owd-1h-m0C" firstAttribute="top" secondItem="tPL-qA-KlP" secondAttribute="bottom" constant="7" id="bcV-F3-eYr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLX-UM-Rk0" secondAttribute="trailing" constant="12" id="dbF-0u-nui"/>
+                            <constraint firstItem="lyV-9U-6rj" firstAttribute="top" secondItem="4DK-3R-hFy" secondAttribute="bottom" constant="20" id="lIT-jd-L1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tPL-qA-KlP" secondAttribute="trailing" constant="12" id="lbl-6E-Gaa"/>
+                            <constraint firstItem="lLX-UM-Rk0" firstAttribute="centerY" secondItem="lSk-9y-JRs" secondAttribute="centerY" id="mNR-HP-kqS"/>
+                            <constraint firstItem="lLX-UM-Rk0" firstAttribute="leading" secondItem="lSk-9y-JRs" secondAttribute="trailing" constant="8" id="p5x-Su-yMx"/>
+                            <constraint firstItem="9El-JC-sh2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s7M-16-emU"/>
+                            <constraint firstItem="lSk-9y-JRs" firstAttribute="top" secondItem="g9Y-i9-Mej" secondAttribute="bottom" constant="40" id="sDD-4X-Pei"/>
+                            <constraint firstItem="owd-1h-m0C" firstAttribute="leading" secondItem="lyV-9U-6rj" secondAttribute="trailing" constant="8" id="xAa-MC-mEg"/>
+                            <constraint firstItem="4DK-3R-hFy" firstAttribute="top" secondItem="lSk-9y-JRs" secondAttribute="bottom" constant="20" id="z7F-mj-nDL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="afterTaxPriceTextField" destination="owd-1h-m0C" id="wSv-en-Ar7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="49.553571428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
